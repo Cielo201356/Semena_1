@@ -11,6 +11,7 @@ ejecutaron pruebas automatizadas ni una auditoria de seguridad especializada.
 
 - Se agregaron `index.html`, `styles.css` y `script.js` para la tarjeta de
   presentacion.
+- Se agrego la ilustracion de perfil `foto.png` y se enlazo desde `index.html`.
 - Se agrego este informe de auditoria.
 - Se cambio el nombre visible de Ana Torres a Cielo Vizcaino en el encabezado,
   el texto alternativo del retrato y el pie de pagina.
@@ -23,16 +24,13 @@ ejecutaron pruebas automatizadas ni una auditoria de seguridad especializada.
 
 ## Hallazgos pendientes
 
-1. **Falta la imagen de perfil.** `index.html` referencia `foto.jpg`, pero ese
-   archivo no esta incluido entre los recursos publicados. El navegador puede
-   mostrar una imagen rota.
-2. **El estado del control de habilidades no se comunica.** El boton permite
+1. **El estado del control de habilidades no se comunica.** El boton permite
    mostrar u ocultar la lista, pero no actualiza `aria-expanded` ni indica el
    estado actual a las tecnologias de asistencia.
-3. **Quedo un mensaje de depuracion.** `script.js` imprime en la consola la
+2. **Quedo un mensaje de depuracion.** `script.js` imprime en la consola la
    cantidad de habilidades. No impide el funcionamiento y se puede retirar si
    ya no se necesita.
-4. **El correo de contacto conserva el valor anterior.** El pie de pagina
+3. **El correo de contacto conserva el valor anterior.** El pie de pagina
    todavia muestra `ana.torres@correo.com`.
 
 ## Verificacion

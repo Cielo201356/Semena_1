@@ -1,29 +1,49 @@
-# Auditoria de la pagina
+# Auditoria y registro de cambios
 
 ## Alcance
 
-Revision del HTML, CSS y JavaScript de la tarjeta de presentacion. Se revisaron
-la estructura, los recursos referenciados, la interaccion y aspectos basicos de
-accesibilidad. No se ejecutaron pruebas automatizadas ni se hizo una auditoria
-de seguridad especializada.
+Revision de la tarjeta de presentacion y registro de los cambios realizados
+para publicarla en GitHub Pages. Se comprobaron el HTML, CSS y JavaScript, la
+configuracion de GitHub Actions y la respuesta HTTP del sitio publicado. No se
+ejecutaron pruebas automatizadas ni una auditoria de seguridad especializada.
 
-## Hallazgos
+## Cambios realizados
 
-1. **La imagen de perfil no esta incluida.** `index.html` referencia
-   `foto.jpg`, pero ese archivo no esta entre los archivos disponibles. El
-   navegador mostrara una imagen rota hasta que se agregue el recurso o se
-   actualice la ruta.
+- Se agregaron `index.html`, `styles.css` y `script.js` para la tarjeta de
+  presentacion.
+- Se agrego este informe de auditoria.
+- Se cambio el nombre visible de Ana Torres a Cielo Vizcaino en el encabezado,
+  el texto alternativo del retrato y el pie de pagina.
+- Se agrego `.github/workflows/deploy-pages.yml` para desplegar el sitio
+  estatico en GitHub Pages con cada push a `main` y manualmente desde Actions.
+- Se habilito GitHub Pages como destino del workflow y se retiro el intento
+  automatico de habilitar Pages, que no tenia permisos suficientes.
+- Los archivos y actualizaciones se publicaron en la rama `main` del
+  repositorio `Cielo201356/Semena_1`.
+
+## Hallazgos pendientes
+
+1. **Falta la imagen de perfil.** `index.html` referencia `foto.jpg`, pero ese
+   archivo no esta incluido entre los recursos publicados. El navegador puede
+   mostrar una imagen rota.
 2. **El estado del control de habilidades no se comunica.** El boton permite
-   mostrar u ocultar la lista, pero no actualiza `aria-expanded` ni un texto
-   que indique el estado actual. Esto puede hacer menos clara la interaccion
-   para usuarios de tecnologias de asistencia.
-3. **Hay un mensaje de depuracion en la consola.** `script.js` imprime la
-   cantidad de habilidades. No impide el funcionamiento, pero conviene
-   retirarlo si no se necesita para depuracion.
+   mostrar u ocultar la lista, pero no actualiza `aria-expanded` ni indica el
+   estado actual a las tecnologias de asistencia.
+3. **Quedo un mensaje de depuracion.** `script.js` imprime en la consola la
+   cantidad de habilidades. No impide el funcionamiento y se puede retirar si
+   ya no se necesita.
+4. **El correo de contacto conserva el valor anterior.** El pie de pagina
+   todavia muestra `ana.torres@correo.com`.
 
-## Comprobaciones
+## Verificacion
 
-- El documento usa elementos semanticos y declara el idioma espanol.
-- La hoja de estilos y el script estan enlazados desde el HTML.
-- El script actualiza el ano y alterna la clase que oculta la lista.
-- No se modificaron los archivos de la pagina durante esta auditoria.
+- El documento usa elementos semanticos, declara `lang="es"` y enlaza la hoja
+  de estilos y el script.
+- El script actualiza el ano y alterna la visibilidad de la lista de
+  habilidades.
+- El workflow de GitHub Actions completo con exito en su segunda ejecucion:
+  [ejecucion 2](https://github.com/Cielo201356/Semena_1/actions/runs/37668499613).
+  La primera ejecucion fallo porque Pages aun no estaba habilitado; tras
+  habilitar Pages se ajusto el workflow y el despliegue termino correctamente.
+- El sitio publicado respondio HTTP 200 al comprobarlo:
+  https://cielo201356.github.io/Semena_1/

@@ -39,9 +39,12 @@ ejecutaron pruebas automatizadas ni una auditoria de seguridad especializada.
   de estilos y el script.
 - El script actualiza el ano y alterna la visibilidad de la lista de
   habilidades.
-- El workflow de GitHub Actions completo con exito en su segunda ejecucion:
-  [ejecucion 2](https://github.com/Cielo201356/Semena_1/actions/runs/37668499613).
-  La primera ejecucion fallo porque Pages aun no estaba habilitado; tras
-  habilitar Pages se ajusto el workflow y el despliegue termino correctamente.
-- El sitio publicado respondio HTTP 200 al comprobarlo:
+- El despliegue mas reciente, que incluye `foto.png`, completo con exito:
+  [ejecucion 5](https://github.com/Cielo201356/Semena_1/actions/runs/37671290577).
+- El sitio publicado respondio HTTP 200:
   https://cielo201356.github.io/Semena_1/
+- La imagen de perfil publicada respondio HTTP 200 con tipo `image/png`:
+  https://cielo201356.github.io/Semena_1/foto.png
+- La primera ejecucion de Actions fallo porque Pages aun no estaba habilitado.
+  Tras habilitarlo y ajustar el workflow, las publicaciones posteriores
+  finalizaron correctamente.
